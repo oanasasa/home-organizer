@@ -1,10 +1,8 @@
-import Header from "@/components/layout/header";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <Header />
       <section>
         <h1 className="text-5xl leading-relaxed mb-10 max-w-xl">
           Design your dream home{" "}

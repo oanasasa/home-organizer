@@ -1,4 +1,3 @@
-import Header from "@/components/layout/header";
 import { prisma } from "@/db";
 import { redirect } from "next/navigation";
 import Link from "next/link";
@@ -7,8 +6,8 @@ export default function Account() {
   async function createUser(data: FormData) {
     "use server";
 
-    const name = data.get("name")?.valueOf();
-    const email = data.get("email")?.valueOf();
+    const name = data.get("username")?.valueOf();
+    const email = data.get("useremail")?.valueOf();
     if (
       (typeof email !== "string" || email.length === 0) &&
       (typeof name !== "string" || name.length === 0)
@@ -22,7 +21,6 @@ export default function Account() {
 
   return (
     <>
-      <Header />
       <section className="grid grid-cols-2 gap-28	">
         <div>
           <h2 className="text-4xl mb-4">Create your account</h2>
@@ -31,8 +29,8 @@ export default function Account() {
               <p className="mb-2">Enter your name</p>
               <input
                 type="text"
+                name="username"
                 placeholder="name"
-                name="name"
                 className="w-full	border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-width:border-slate-100"
               />
             </div>
@@ -40,8 +38,8 @@ export default function Account() {
               <p className="mb-2">Enter your email</p>
               <input
                 type="email"
+                name="useremail"
                 placeholder="email"
-                name="email"
                 className="w-full	border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-width:border-slate-100"
               />
             </div>
