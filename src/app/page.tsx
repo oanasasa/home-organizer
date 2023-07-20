@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <section>
         <h1 className="text-5xl leading-relaxed mb-10 max-w-xl">
-          Design your dream home{" "}
+          Design your dream home
           <span className="italic">that you deserve...</span>
         </h1>
         <p className="text-2xl mb-10">
