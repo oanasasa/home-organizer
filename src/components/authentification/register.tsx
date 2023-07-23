@@ -23,7 +23,7 @@ export default function Register() {
       throw new Error("Invalid Password");
     }
     await prisma.user.create({ data: { name, email } });
-    redirect("/");
+    redirect("/select-home");
   }
 
   return (
